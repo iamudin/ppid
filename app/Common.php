@@ -172,9 +172,11 @@ if (!function_exists('tgl_indo2')) {
 if (!function_exists('tcpdf')) {
     function tcpdf(): void
     {
-        $file = APPPATH . 'ThirdParty/tcpdf/tcpdf.php';
-        if (file_exists($file)) {
-            require_once $file;
+        if (!class_exists('TCPDF')) {
+            $file = VENDORPATH . 'tecnickcom/tcpdf/tcpdf.php';
+            if (file_exists($file)) {
+                require_once $file;
+            }
         }
     }
 }

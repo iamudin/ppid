@@ -2,7 +2,8 @@
 
 # Environment File (Secrets)
 .env
-
+/media/
+/asset/
 # User environment overrides
 .env.test
 .env.backup
