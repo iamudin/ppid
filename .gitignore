@@ -2,7 +2,6 @@
 
 # Environment File (Secrets)
 .env
-/media/
 /asset/*
 !/asset/blank/
 !/asset/.htaccess
