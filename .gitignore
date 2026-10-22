@@ -1,0 +1,52 @@
+# CodeIgniter 4 .gitignore
+
+# Environment File (Secrets)
+.env
+
+# User environment overrides
+.env.test
+.env.backup
+
+# Writable directories (keep folders, ignore runtime files)
+/writable/cache/*
+!/writable/cache/index.html
+!/writable/cache/.gitkeep
+/writable/debugbar/*
+!/writable/debugbar/index.html
+!/writable/debugbar/.gitkeep
+/writable/logs/*
+!/writable/logs/index.html
+!/writable/logs/.gitkeep
+/writable/session/*
+!/writable/session/index.html
+!/writable/session/.gitkeep
+/writable/uploads/*
+!/writable/uploads/index.html
+!/writable/uploads/.gitkeep
+
+# Composer Dependencies
+/vendor/
+
+# macOS / Windows / Linux System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# IDE & Editor Configs
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Temporary / Scratch Files
+*.bak
+*.tmp
+*.log

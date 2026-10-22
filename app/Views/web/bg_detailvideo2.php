@@ -1,0 +1,100 @@
+
+	<!--  blog-single-content start-->
+	<section id="blog-single-main-detail">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-12 col-sm-12 col-12">
+
+					
+						<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
+  <li class="breadcrumb-item active">Video Informasi</li>
+</ol>
+						<div class="blog-single-dd-hed">
+							<div class="dlab-post-meta baris">
+                                <ul>
+                                    <li class="post-date"><i class="fas fa-clock"></i><strong class="text-black"><? echo tgl_indo($tanggal);?> - <? echo $waktu;?> Wib</strong> </li>
+                                    
+                                </ul>
+                            </div>
+							<h4><a href="#!"><? echo $nama_album;?></a></h4>
+							<br>
+<div class="blog-sighn-img  wow fadeIn" data-wow-duration="3s">
+							 <iframe width="100%" height="400" frameborder="0" allowfullscreen="" src="<? echo $isi;?>"></iframe>
+						</div>
+						
+
+							<div id="isiku">
+
+							 <?
+		echo $isi;
+		?></div>
+						</div>
+						
+						
+						
+						<div class="inner-tahesxx">
+							<hr>
+							
+
+<div class="sharethis-inline-share-buttons"></div> 
+							
+						</div>
+					
+
+						<div class="lave-cooment">
+								<div class="comm-foot-hed-widget">
+							<h6>Video  Sebelumnya</h6>
+						</div>
+							<div class="row">
+								
+								  <?php
+$no=1;
+foreach($semua->result_array() as $bi)
+{
+?>
+
+<div class="col-lg-6 col-md-6 col-sm-6 col-12">
+					<div class="des-cov-1 bg-white">
+					<div class="des-img-1">
+						<a href="<?php echo base_url(); ?>web/detailvideo/<? echo $bi['id_video'];?>/<? echo $bi['permalink'];?>"><img src="<?php echo base_url(); ?>asset/banner/<? echo $bi['gambar'];?>" alt=""></a>
+					</div>
+					<div class="des-para">
+						<div class="dayt">
+							<h6><a href="<?php echo base_url(); ?>web/detailvideo/<? echo $bi['id_video'];?>/<? echo $bi['permalink'];?>"><? echo $bi['judul_video'];?></a></h6>
+							
+						</div>
+						<div class="real-dat-para">
+							<p><? echo tgl_indo($bi['tanggal']);?></p>
+						</div>
+						
+					</div>
+				</div>
+				</div>
+
+<?php } ?>
+								
+							</div>
+						</div>
+	<div class="lave-cooment">
+						 	<div class="comm-foot-hed-widget">
+							<h6>Tulis Komentar</h6>
+						</div>
+                  
+                  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+	</div>
+	 
+    
+    <div class="fb-comments" data-href="<?php echo base_url(); ?>web/detailvideo/<? echo $id_berita;?>" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
+						
+					
+				</div>
+				

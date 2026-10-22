@@ -1,0 +1,8 @@
+[17-Jun-2023 11:15:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resolveUrl() in /home/bengkali/public_html/ppid/assets/gambar/config.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/bengkali/public_html/ppid/assets/gambar/config.php on line 86
+[25-Jul-2023 20:46:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resolveUrl() in /home/bengkali/public_html/ppid/assets/gambar/config.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/bengkali/public_html/ppid/assets/gambar/config.php on line 86

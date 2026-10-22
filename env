@@ -1,0 +1,29 @@
+#--------------------------------------------------------------------
+# Example Environment Configuration file for CodeIgniter 4
+# Copy this file to .env and adjust values for your environment.
+#--------------------------------------------------------------------
+
+CI_ENVIRONMENT = development
+
+app.baseURL = 'https://ppid.test/'
+app.forceGlobalSecureRequests = false
+app.sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler'
+app.sessionCookieName = 'ci_session'
+app.sessionExpiration = 7200
+app.sessionSavePath = null
+app.sessionMatchIP = false
+app.sessionTimeToUpdate = 300
+app.sessionRegenerateDestroy = false
+
+# Database Configuration
+database.default.hostname = localhost
+database.default.database = k0m1nf0ppid_baru
+database.default.username = root
+database.default.password = 
+database.default.DBDriver = MySQLi
+database.default.DBPrefix = 
+database.default.port = 3306
+
+# Encryption Key
+# Run `php spark key:generate` to generate a new key
+# encryption.key = 
