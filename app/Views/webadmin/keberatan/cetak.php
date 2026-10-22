@@ -1,7 +1,7 @@
 
 <table border="0" cellpadding="1" cellspacing="1" style="width:100%;">
   <tr>
-    <td width="11%" rowspan="3" align="center"><img width="50" src="<?php echo base_url(); ?>logo.png"/></td>
+    <td width="11%" rowspan="3" align="center"><img width="50" src="<?= FCPATH . 'logo.png' ?>"/></td>
     <td width="89%" align="center"><h3>PEMERINTAH KABUPATEN BENGKALIS</h3></td>
   </tr>
   <tr>

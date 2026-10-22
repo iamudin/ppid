@@ -10444,9 +10444,13 @@ ob_start();
 			$this->load->view('webadmin/permohonan/cetak',$data);
 			
 			$content = ob_get_contents();
-ob_end_clean();
-$obj_pdf->writeHTML($content, true, true, true, true, '');
-$obj_pdf->Output('cetakpermohonan.pdf', 'I');
+			ob_end_clean();
+			$obj_pdf->writeHTML($content, true, true, true, true, '');
+			while (ob_get_level()) {
+				ob_end_clean();
+			}
+			$obj_pdf->Output('cetakpermohonan.pdf', 'I');
+			exit;
 		}
 		else
 		{
@@ -10516,9 +10520,13 @@ ob_start();
 			$this->load->view('webadmin/keberatan/cetak',$data);
 			
 			$content = ob_get_contents();
-ob_end_clean();
-$obj_pdf->writeHTML($content, true, true, true, true, '');
-$obj_pdf->Output('cetakpermohonan.pdf', 'I');
+			ob_end_clean();
+			$obj_pdf->writeHTML($content, true, true, true, true, '');
+			while (ob_get_level()) {
+				ob_end_clean();
+			}
+			$obj_pdf->Output('cetakkeberatan.pdf', 'I');
+			exit;
 		}
 		else
 		{

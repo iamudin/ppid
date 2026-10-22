@@ -8411,10 +8411,13 @@ public function cetakpermohonan()
 
         $obj_pdf->writeHTML($content, true, true, true, true, '');
         
-        // Bersihkan buffer lagi sebelum Output PDF dikirim
-        ob_end_clean(); 
+        // Bersihkan buffer jika ada sebelum Output PDF dikirim
+        while (ob_get_level()) {
+            ob_end_clean();
+        }
         
         $obj_pdf->Output('cetakpermohonan.pdf', 'I');
+        exit;
     }
     else
     {
@@ -8485,7 +8488,11 @@ ob_start();
 			$content = ob_get_contents();
 ob_end_clean();
 $obj_pdf->writeHTML($content, true, true, true, true, '');
-$obj_pdf->Output('cetakpermohonan.pdf', 'I');
+while (ob_get_level()) {
+    ob_end_clean();
+}
+$obj_pdf->Output('cetakkeberatan.pdf', 'I');
+exit;
 		}
 		else
 		{
