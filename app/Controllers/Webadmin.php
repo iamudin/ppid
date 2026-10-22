@@ -33,7 +33,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Tambah Foto';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -87,7 +87,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 
 			//$data2['status'] = "administrator";
@@ -128,7 +128,7 @@ class Webadmin extends CI_Controller
 			$this->load->view('webadmin/bg_login', $data);
 		} else {
 
-			header('location:' . base_url() . 'webadmin');
+			header('location:' . base_url() . 'webadmin'); exit;
 		}
 	}
 
@@ -154,14 +154,14 @@ class Webadmin extends CI_Controller
 				$this->Webadmin_model->getLoginData($u, $p);
 			}
 		} else {
-			header('location:' . base_url() . 'webadmin');
+			header('location:' . base_url() . 'webadmin'); exit;
 		}
 	}
 
 	function logout()
 	{
 		$this->session->sess_destroy();
-		header('location:' . base_url() . '');
+		header('location:' . base_url() . ''); exit;
 	}
 	function index()
 	{
@@ -169,7 +169,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -199,7 +199,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -245,7 +245,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -271,7 +271,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data2['nama'] = $this->input->post('nama');
 			$data2['alamat'] = $this->input->post('alamat');
@@ -310,7 +310,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "kode_wartawan", "user");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -331,7 +331,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -351,7 +351,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data2["kode_wartawan"] = $this->input->post('id');
 			$data2['nama'] = $this->input->post('nama');
@@ -372,7 +372,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Menu Statis';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -393,7 +393,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$timezone = "Asia/Jakarta";
 			if (function_exists('date_default_timezone_set'))
@@ -448,7 +448,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Ubah Menu Statis';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -470,7 +470,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -515,7 +515,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id", "tbl_menu");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -539,7 +539,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Statis';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -590,7 +590,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Tambah Data Statis';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -622,7 +622,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data2['data_id'] = $this->input->post('data_id');
 			$data2['content'] = $this->input->post('content');
@@ -660,7 +660,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Ubah Data Statis';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -686,7 +686,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -712,7 +712,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_data", "tbl_data");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -737,7 +737,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Master Banner';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -791,7 +791,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->session->set_flashdata('message', 'Data Terhapus!');
 			$this->Webadmin_model->Delete_Content($id, "id_banner", "tbl_banner");
@@ -806,7 +806,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -825,7 +825,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -873,7 +873,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Ubah Banner';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -895,7 +895,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$acak = rand(00000000000, 99999999999);
 			$bersih = $_FILES['userfile']['name'];
@@ -948,7 +948,7 @@ class Webadmin extends CI_Controller
 		$data['akses'] = $this->session->userdata('akses');
 		$data["page"] = $page;
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -994,7 +994,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -1024,7 +1024,7 @@ class Webadmin extends CI_Controller
 		$data['akses'] = $this->session->userdata('akses');
 
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data2['judul_link'] = $this->input->post('nama');
 			$data2['url'] = $this->input->post('username');
@@ -1077,7 +1077,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_link", "tbl_link");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -1097,7 +1097,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -1119,7 +1119,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -1178,7 +1178,7 @@ class Webadmin extends CI_Controller
 		$data['akses'] = $this->session->userdata('akses');
 		$data["page"] = $page;
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Kepegawaian';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -1231,7 +1231,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_kepegawaian", "tbl_kepegawaian");
 			echo "<meta http-equiv='refresh' content='0; url=" . base_url() . "webadmin/kepegawaian'>";
@@ -1251,7 +1251,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Tambah Jenis Informasi';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -1306,7 +1306,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data2['jabatan'] = $this->input->post('nama');
 			$this->form_validation->set_rules('nama', 'Jabatan', 'trim|required');
@@ -1368,7 +1368,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_jabatan", "tbl_jabatan");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -1386,7 +1386,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Tambah Informasi';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -1416,7 +1416,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -1438,7 +1438,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -1456,7 +1456,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$timezone = "Asia/Jakarta";
 			if (function_exists('date_default_timezone_set'))
@@ -1530,7 +1530,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Ubah Data Statis';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -1554,7 +1554,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			if (empty($_FILES['userfile']['name'])) {
 				$content = $this->input->post('content');
@@ -1633,7 +1633,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Master Download';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -1683,7 +1683,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "kode_download", "tbl_download");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -1697,7 +1697,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Tambah download';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -1721,7 +1721,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -1805,7 +1805,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Edit Download';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -1829,7 +1829,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$acak = rand(00000000000, 99999999999);
 			$bersih = $_FILES['userfile']['name'];
@@ -1887,7 +1887,7 @@ class Webadmin extends CI_Controller
 		$data["page"] = $page;
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Polling';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -1936,7 +1936,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Tambah Soal Polling';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -1963,7 +1963,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 
 			$data2['soal_poll'] = $this->input->post('soal');
@@ -1999,7 +1999,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Ubah Soal Polling';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -2024,7 +2024,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$in["id_soal_poll"] = $this->input->post('id');
 			$in["soal_poll"] = $this->input->post('soal');
@@ -2047,7 +2047,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_soal_poll", "tbl_soalpolling");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -2072,7 +2072,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Tambah Jawaban Polling';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -2124,7 +2124,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$time = time();
@@ -2153,7 +2153,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_jawaban_poll", "tbl_jawabanpoll");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -2177,7 +2177,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Ubah Jawaban Polling';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -2199,7 +2199,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$in["id_jawaban_poll"] = $this->input->post('id');
 			$in["id_soal_poll"] = $this->input->post('pertanyaan');
@@ -2228,7 +2228,7 @@ class Webadmin extends CI_Controller
 		$data['akses'] = $this->session->userdata('akses');
 		$data["page"] = $page;
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Master Agenda';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -2278,7 +2278,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_agenda", "tbl_agenda");
 			echo "<meta http-equiv='refresh' content='0; url=" . base_url() . "webadmin/agenda'>";
@@ -2291,7 +2291,7 @@ class Webadmin extends CI_Controller
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -2356,7 +2356,7 @@ tbl_jabatan on tbl_jabatan.id_jabatan=tbl_kepegawaian.kode_jabatan
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 
 			$tgl = " %Y-%m-%d";
@@ -2432,7 +2432,7 @@ tbl_jabatan on tbl_jabatan.id_jabatan=tbl_kepegawaian.kode_jabatan
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -2490,7 +2490,7 @@ tbl_jabatan on tbl_jabatan.id_jabatan=tbl_kepegawaian.kode_jabatan
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$in["id_agenda"] = $this->input->post('id_agenda');
 			$in["tema_agenda"] = $this->input->post('judul');
@@ -2551,7 +2551,7 @@ tbl_jabatan on tbl_jabatan.id_jabatan=tbl_kepegawaian.kode_jabatan
 		$data['akses'] = $this->session->userdata('akses');
 		$data["page"] = $page;
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Master Pengumuman';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -2599,7 +2599,7 @@ tbl_jabatan on tbl_jabatan.id_jabatan=tbl_kepegawaian.kode_jabatan
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -2631,7 +2631,7 @@ tbl_jabatan on tbl_jabatan.id_jabatan=tbl_kepegawaian.kode_jabatan
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$time = time();
@@ -2688,7 +2688,7 @@ tbl_jabatan on tbl_jabatan.id_jabatan=tbl_kepegawaian.kode_jabatan
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_pengumuman", "tbl_pengumuman");
 			echo "<meta http-equiv='refresh' content='0; url=" . base_url() . "webadmin/pengumuman'>";
@@ -2707,7 +2707,7 @@ tbl_jabatan on tbl_jabatan.id_jabatan=tbl_kepegawaian.kode_jabatan
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -2733,7 +2733,7 @@ tbl_jabatan on tbl_jabatan.id_jabatan=tbl_kepegawaian.kode_jabatan
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$content = $this->input->post('content');
 			$data2["judul_pengumuman"] = $this->input->post('judul');
@@ -2773,7 +2773,7 @@ tbl_jabatan on tbl_jabatan.id_jabatan=tbl_kepegawaian.kode_jabatan
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Tambah Petugas';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -2844,7 +2844,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data2['ket'] = $this->input->post('nama');
 			$data2['id_agenda'] = $this->input->post('agenda');
@@ -2923,7 +2923,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_petugas", "tbl_petugas");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -2944,7 +2944,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -2981,7 +2981,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -3011,7 +3011,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$data['akses'] = $this->session->userdata('akses');
 		$data["page"] = $page;
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -3059,7 +3059,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -3088,7 +3088,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data2['judul_paper'] = $this->input->post('nama');
 			$data2['url'] = $this->input->post('username');
@@ -3144,7 +3144,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_paper", "tbl_paper");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -3164,7 +3164,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -3193,7 +3193,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -3215,7 +3215,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			if (!empty($_FILES)) {
 				$kode = $this->input->post('id_param');
@@ -3240,7 +3240,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -3301,7 +3301,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Berita';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -3354,7 +3354,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Berita';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -3411,7 +3411,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Tambah Berita';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -3444,7 +3444,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_berita", "tblberita");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -3466,7 +3466,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$timezone = "Asia/Jakarta";
 			if (function_exists('date_default_timezone_set'))
@@ -3615,7 +3615,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Ubah Berita';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -3641,7 +3641,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			if (empty($_FILES['userfile']['name'])) {
 				$timezone = "Asia/Jakarta";
@@ -3810,7 +3810,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$data['akses'] = $this->session->userdata('akses');
 		$data["page"] = $page;
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -3854,7 +3854,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -3883,7 +3883,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data2['judul_beritafoto'] = $this->input->post('nama');
 			$data2['isi'] = $this->input->post('username');
@@ -3957,7 +3957,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_beritafoto", "tbl_beritafoto");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -3977,7 +3977,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -3999,7 +3999,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -4089,7 +4089,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$data['akses'] = $this->session->userdata('akses');
 		$data["page"] = $page;
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Galeri';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -4134,7 +4134,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -4163,7 +4163,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data2['nama_album'] = $this->input->post('nama');
 			$data2['keterangan'] = $this->input->post('isi');
@@ -4220,7 +4220,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_album", "tbl_album_galeri");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -4240,7 +4240,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -4262,7 +4262,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$timezone = "Asia/Jakarta";
 			if (function_exists('date_default_timezone_set'))
@@ -4310,7 +4310,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Tambah Foto';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -4359,7 +4359,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 
 			if (!empty($_FILES)) {
@@ -4404,7 +4404,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			//------------------------------------------------------------------------------------
 			if (!empty($_FILES['userfile']['name'])) {
@@ -4484,7 +4484,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Ubah Foto';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -4508,7 +4508,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			if (empty($_FILES['userfile']['name'])) {
 				$timezone = "Asia/Jakarta";
@@ -4603,12 +4603,12 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_foto", "tbl_galeri");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
 			//echo "<meta http-equiv='refresh' content='0; url=".base_url()."webadmin/tambahfoto/'.$id2>";
-			header('location:' . base_url() . 'webadmin/tambahfoto/' . $id2);
+			header('location:' . base_url() . 'webadmin/tambahfoto/' . $id2); exit;
 		}
 
 	}
@@ -4629,7 +4629,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$data['akses'] = $this->session->userdata('akses');
 		$data["page"] = $page;
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -4681,7 +4681,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$data['akses'] = $this->session->userdata('akses');
 		$data["page"] = $page;
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -4733,7 +4733,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Ubah Kontak';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -4757,7 +4757,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -4805,7 +4805,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->session->set_flashdata('message', 'Data Terhapus!');
 			$this->Webadmin_model->Delete_Content($id, "id_hubungi", "tblhubungi");
@@ -4829,7 +4829,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -4878,7 +4878,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_info", "tbl_info");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -4892,7 +4892,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -4921,7 +4921,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data2['judul_info'] = $this->input->post('nama');
 			$data2['url'] = $this->input->post('username');
@@ -4975,7 +4975,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -4997,7 +4997,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -5054,7 +5054,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$data['akses'] = $this->session->userdata('akses');
 		$data["page"] = $page;
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -5102,7 +5102,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_video", "tbl_video");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -5116,7 +5116,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -5146,7 +5146,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data2['judul_video'] = $this->input->post('nama');
 			$data2['url'] = $this->input->post('username');
@@ -5221,7 +5221,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -5244,7 +5244,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -5338,7 +5338,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Tambah Jenis Informasi';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -5389,7 +5389,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 
 			$data2['tag'] = $this->input->post('nama');
@@ -5457,7 +5457,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_tag", "tbl_tag");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -5477,7 +5477,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -5499,7 +5499,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -5535,7 +5535,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$data['akses'] = $this->session->userdata('akses');
 		$data["page"] = $page;
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -5579,7 +5579,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -5613,7 +5613,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data2['judul_penghargaan'] = $this->input->post('nama');
 			$data2['isi'] = $this->input->post('username');
@@ -5694,7 +5694,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_penghargaan", "tbl_penghargaan");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -5714,7 +5714,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -5742,7 +5742,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -5836,7 +5836,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Polling';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -5883,7 +5883,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Tambah Soal Polling';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -5913,7 +5913,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 
 			$data2['skpd'] = $this->input->post('soal');
@@ -5949,7 +5949,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Ubah Soal Polling';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -5975,7 +5975,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$in["id_skpd"] = $this->input->post('id');
 			$in["skpd"] = $this->input->post('soal');
@@ -5998,7 +5998,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_skpd", "tbl_skpd");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -6024,7 +6024,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -6074,7 +6074,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_pembantu", "user_pembantu");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -6089,7 +6089,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -6116,7 +6116,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data2['nama'] = $this->input->post('nama');
 			$data2['email'] = $this->input->post('isi');
@@ -6190,7 +6190,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -6213,7 +6213,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 
 
@@ -6283,7 +6283,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -6337,7 +6337,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -6390,7 +6390,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -6443,7 +6443,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -6495,7 +6495,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -6539,7 +6539,7 @@ tbl_agenda order by tbl_agenda.id_agenda DESC
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -6620,7 +6620,7 @@ order by tbl_faq.id_faq ASC");
 			$this->load->view('webadmin/faq/input', $data);
 			$this->load->view('webadmin/bg_bawah', $data);
 		} else {
-			header('location:' . base_url() . '');
+			header('location:' . base_url() . ''); exit;
 		}
 	}
 
@@ -6631,9 +6631,9 @@ order by tbl_faq.id_faq ASC");
 			$id['id_faq'] = $this->uri->segment(3);
 			$this->db->delete("tbl_faq", $id);
 			$this->session->set_flashdata('message', 'Data Sudah Terhapus.');
-			header('location:' . base_url() . 'webadmin/faq');
+			header('location:' . base_url() . 'webadmin/faq'); exit;
 		} else {
-			header('location:' . base_url() . '');
+			header('location:' . base_url() . ''); exit;
 		}
 	}
 
@@ -6661,7 +6661,7 @@ order by tbl_faq.id_faq ASC");
 			$this->load->view('webadmin/faq/input', $data);
 			$this->load->view('webadmin/bg_bawah', $data);
 		} else {
-			header('location:' . base_url() . '');
+			header('location:' . base_url() . ''); exit;
 		}
 	}
 
@@ -6673,7 +6673,7 @@ order by tbl_faq.id_faq ASC");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -6693,7 +6693,7 @@ order by tbl_faq.id_faq ASC");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -6713,7 +6713,7 @@ order by tbl_faq.id_faq ASC");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -6734,7 +6734,7 @@ order by tbl_faq.id_faq ASC");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 
 			//Proses Simpan
@@ -6810,7 +6810,7 @@ order by tbl_faq.id_faq ASC");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 
 			//Proses Simpan
@@ -6888,7 +6888,7 @@ order by tbl_faq.id_faq ASC");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -6910,7 +6910,7 @@ order by tbl_faq.id_faq ASC");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 
 			//Proses Simpan
@@ -6996,7 +6996,7 @@ order by tbl_faq.id_faq ASC");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -7019,7 +7019,7 @@ order by tbl_faq.id_faq ASC");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 
 			//Proses Simpan
@@ -7099,7 +7099,7 @@ order by tbl_faq.id_faq ASC");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -7162,7 +7162,7 @@ tbl_jenis on tbl_jenis.permalink=tbl_pemohon.jenis
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 
 
@@ -7186,7 +7186,7 @@ tbl_jenis on tbl_jenis.permalink=tbl_pemohon.jenis
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -7237,7 +7237,7 @@ tbl_jenis on tbl_jenis.permalink=tbl_pemohon.jenis
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->session->set_flashdata('message', 'Data Terhapus!');
 			$this->Webadmin_model->Delete_Content($id, "id_kelengkapan", "tbl_kelengkapan");
@@ -7258,7 +7258,7 @@ tbl_jenis on tbl_jenis.permalink=tbl_pemohon.jenis
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -7290,7 +7290,7 @@ ORDER BY tbl_kelengkapanberat.id_kelengkapanberat ASC");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 
 
@@ -7313,7 +7313,7 @@ ORDER BY tbl_kelengkapanberat.id_kelengkapanberat ASC");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -7364,7 +7364,7 @@ ORDER BY tbl_kelengkapanberat.id_kelengkapanberat ASC");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->session->set_flashdata('message', 'Data Terhapus!');
 			$this->Webadmin_model->Delete_Content($id, "id_kelengkapanberat", "tbl_kelengkapanberat");
@@ -7383,9 +7383,9 @@ ORDER BY tbl_kelengkapanberat.id_kelengkapanberat ASC");
 			//Kelang
 
 			$this->session->set_flashdata('message', 'Data Sudah Terhapus.');
-			header('location:' . base_url() . 'webadmin/permohonan');
+			header('location:' . base_url() . 'webadmin/permohonan'); exit;
 		} else {
-			header('location:' . base_url() . '');
+			header('location:' . base_url() . ''); exit;
 		}
 	}
 
@@ -7396,9 +7396,9 @@ ORDER BY tbl_kelengkapanberat.id_kelengkapanberat ASC");
 			$datainput['id_pemohon'] = $this->uri->segment(3);
 			$datainput['status2'] = "N";
 			$this->Webadmin_model->Update_Content("tbl_pemohon", $datainput, "id_pemohon");
-			header('location:' . base_url() . 'webadmin/permohonanfinal');
+			header('location:' . base_url() . 'webadmin/permohonanfinal'); exit;
 		} else {
-			header('location:' . base_url() . '');
+			header('location:' . base_url() . ''); exit;
 		}
 	}
 
@@ -7485,9 +7485,9 @@ ORDER BY tbl_kelengkapanberat.id_kelengkapanberat ASC");
 			$id['id_keberatan'] = $this->uri->segment(3);
 			$this->db->delete("tbl_keberatan", $id);
 			$this->session->set_flashdata('message', 'Data Sudah Terhapus.');
-			header('location:' . base_url() . 'webadmin/keberatan');
+			header('location:' . base_url() . 'webadmin/keberatan'); exit;
 		} else {
-			header('location:' . base_url() . '');
+			header('location:' . base_url() . ''); exit;
 		}
 	}
 
@@ -7543,7 +7543,7 @@ FROM tbl_keberatan where tbl_keberatan.id_keberatan='$id_pemohon'
 			$obj_pdf->Output('cetakkeberatan.pdf', 'I');
 			exit;
 		} else {
-			header('location:' . base_url() . '');
+			header('location:' . base_url() . ''); exit;
 		}
 	}
 
@@ -7553,7 +7553,7 @@ FROM tbl_keberatan where tbl_keberatan.id_keberatan='$id_pemohon'
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -7590,7 +7590,7 @@ FROM tbl_keberatan where tbl_keberatan.id_keberatan='$id_pemohon'
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -7634,7 +7634,7 @@ FROM tbl_keberatan where tbl_keberatan.id_keberatan='$id_pemohon'
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -7672,7 +7672,7 @@ FROM tbl_keberatan where tbl_keberatan.id_keberatan='$id_pemohon'
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -7724,7 +7724,7 @@ FROM tbl_keberatan where tbl_keberatan.id_keberatan='$id_pemohon'
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -7781,7 +7781,7 @@ FROM tbl_keberatan where tbl_keberatan.id_keberatan='$id_pemohon'
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -7861,7 +7861,7 @@ tbl_jenis on tbl_jenis.permalink=tbl_pemohon.jenis
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->session->set_flashdata('message', 'Data Terhapus!');
 			$this->Webadmin_model->Delete_Content($id, "id_ktp", "tbl_ktp");
@@ -7884,7 +7884,7 @@ tbl_jenis on tbl_jenis.permalink=tbl_pemohon.jenis
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -7977,7 +7977,7 @@ tbl_ktp.id_ktp='$id2'");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -8025,7 +8025,7 @@ tbl_ktp.id_ktp='$id2'");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$idx = $this->input->post('id');
 			$acak = rand(00000000000, 99999999999);
@@ -8087,7 +8087,7 @@ tbl_ktp.id_ktp='$id2'");
 		$data['akses'] = $this->session->userdata('akses');
 		$data["page"] = $page;
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -8138,7 +8138,7 @@ tbl_ktp.id_ktp='$id2'");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_pengirim", "tbl_pengirim");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -8162,7 +8162,7 @@ tbl_ktp.id_ktp='$id2'");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Master Download';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -8212,7 +8212,7 @@ tbl_ktp.id_ktp='$id2'");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$this->Webadmin_model->Delete_Content($id, "id_transparansi", "tbl_transparansi");
 			$this->session->set_flashdata('message', 'Data Terhapus!');
@@ -8226,7 +8226,7 @@ tbl_ktp.id_ktp='$id2'");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Tambah download';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -8252,7 +8252,7 @@ tbl_ktp.id_ktp='$id2'");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$tgl = " %Y-%m-%d";
 			$jam = "%h:%i:%a";
@@ -8332,7 +8332,7 @@ tbl_ktp.id_ktp='$id2'");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Edit Download';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -8359,7 +8359,7 @@ tbl_ktp.id_ktp='$id2'");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$acak = rand(00000000000, 99999999999);
 			$bersih = $_FILES['userfile']['name'];
@@ -8418,7 +8418,7 @@ tbl_ktp.id_ktp='$id2'");
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['h2_title'] = 'Ubah Berita';
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
@@ -8469,7 +8469,7 @@ FROM
 		$data['akses'] = $this->session->userdata('akses');
 		$data["page"] = $page;
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 			$data['judul_lengkap'] = $this->config->item('nama_aplikasi_full');
 			$data['judul_pendek'] = $this->config->item('nama_aplikasi_pendek');
@@ -8496,7 +8496,7 @@ FROM
 		$this->Webadmin_model->Delete_Content($id, "id_lampiran", "tbl_lampiran");
 		$this->session->set_flashdata('message', 'Data Terhapus!');
 		//echo "<meta http-equiv='refresh' content='0; url=".base_url()."webadmin/tambahfoto/'.$id2>";
-		header('location:' . base_url() . 'webadmin/tambahlampiran/' . $id2);
+		header('location:' . base_url() . 'webadmin/tambahlampiran/' . $id2); exit;
 
 	}
 	public function uploadlampiranbaru()
@@ -8504,7 +8504,7 @@ FROM
 		$cek = $this->session->userdata('logged_in');
 		$data['akses'] = $this->session->userdata('akses');
 		if (empty($cek)) {
-			header('location:' . base_url() . 'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage'); exit;
 		} else {
 
 			$kode = $this->input->post('id_param');
