@@ -178,6 +178,9 @@ if (!function_exists('tcpdf')) {
                 require_once $file;
             }
         }
+        if (class_exists('TCPDF') && !class_exists('App\Controllers\TCPDF')) {
+            class_alias('TCPDF', 'App\Controllers\TCPDF');
+        }
     }
 }
 

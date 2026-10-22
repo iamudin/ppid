@@ -3,7 +3,11 @@
 # Environment File (Secrets)
 .env
 /media/
-/asset/
+/asset/*
+!/asset/blank/
+!/asset/.htaccess
+/media/*
+!/media/.htaccess
 # User environment overrides
 .env.test
 .env.backup
