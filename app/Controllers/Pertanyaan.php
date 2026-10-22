@@ -21,7 +21,7 @@ class Pertanyaan extends CI_Controller
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -83,7 +83,7 @@ class Pertanyaan extends CI_Controller
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -111,7 +111,7 @@ class Pertanyaan extends CI_Controller
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -136,7 +136,7 @@ class Pertanyaan extends CI_Controller
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -171,7 +171,7 @@ class Pertanyaan extends CI_Controller
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -196,7 +196,7 @@ class Pertanyaan extends CI_Controller
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {

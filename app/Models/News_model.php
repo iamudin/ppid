@@ -1854,13 +1854,15 @@ tblhubungi WHERE tbl_download.download like '%$id%' or tbl_download.ket like '%$
 					$sess_data['skpd_ppid'] = $qad->id_skpd;
 					$this->session->set_userdata($sess_data);
 				}
-				header('location:'.base_url().'pembantu');
+				header('location:' . base_url() . 'pembantu');
+				exit;
 			}
 		}
 		else
 		{
 			$this->session->set_flashdata('result_login', 'Username atau Password yang anda masukkan salah.');
-			header('location:'.base_url().'web');
+			header('location:' . base_url() . 'web');
+			exit;
 		}
 		
 	

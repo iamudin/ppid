@@ -49,13 +49,15 @@ class Webadmin_model extends CI_Model{
 					$sess_data['akses'] = $qad->akses;
 					$this->session->set_userdata($sess_data);
 				}
-				header('location:'.base_url().'webadmin');
+				header('location:' . base_url() . 'webadmin');
+				exit;
 			}
 		}
 		else
 		{
 			$this->session->set_flashdata('result_login', 'Username atau Password yang anda masukkan salah.');
-			header('location:'.base_url().'webadmin/loginpage');
+			header('location:' . base_url() . 'webadmin/loginpage');
+			exit;
 		}
 		
 	

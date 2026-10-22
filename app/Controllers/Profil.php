@@ -35,7 +35,7 @@ class Profil extends CI_Controller
         $data["page"] = $page;
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -86,7 +86,7 @@ class Profil extends CI_Controller
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -193,7 +193,7 @@ tbl_jabatanprofil on tbl_jabatanprofil.id_jabatanprofil=tbl_pekerjaanprofil.id_j
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -253,7 +253,7 @@ tbl_jabatanprofil on tbl_jabatanprofil.id_jabatanprofil=tbl_pekerjaanprofil.id_j
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -352,7 +352,7 @@ tbl_jabatanprofil on tbl_jabatanprofil.id_jabatanprofil=tbl_pekerjaanprofil.id_j
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -419,7 +419,7 @@ tbl_jabatanprofil on tbl_jabatanprofil.id_jabatanprofil=tbl_pekerjaanprofil.id_j
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -516,7 +516,7 @@ tbl_jabatanprofil on tbl_jabatanprofil.id_jabatanprofil=tbl_pekerjaanprofil.id_j
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -539,7 +539,7 @@ tbl_jabatanprofil on tbl_jabatanprofil.id_jabatanprofil=tbl_pekerjaanprofil.id_j
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -618,7 +618,7 @@ tbl_kelamin ON tbl_kelamin.id_kelamin=tbl_anak.id_jk where tbl_anak.id_profil='$
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -644,7 +644,7 @@ tbl_kelamin ON tbl_kelamin.id_kelamin=tbl_anak.id_jk where tbl_anak.id_profil='$
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -691,7 +691,7 @@ tbl_kelamin ON tbl_kelamin.id_kelamin=tbl_anak.id_jk where tbl_anak.id_profil='$
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -721,7 +721,7 @@ tbl_kelamin ON tbl_kelamin.id_kelamin=tbl_anak.id_jk where tbl_anak.id_profil='$
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -748,7 +748,7 @@ tbl_kelamin ON tbl_kelamin.id_kelamin=tbl_anak.id_jk where tbl_anak.id_profil='$
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -770,7 +770,7 @@ tbl_kelamin ON tbl_kelamin.id_kelamin=tbl_anak.id_jk where tbl_anak.id_profil='$
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -856,7 +856,7 @@ LEFT JOIN tbl_jenjang ON tbl_jenjang.id_jenjang = tbl_pendidikan.id_jenjang
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -886,7 +886,7 @@ LEFT JOIN tbl_jenjang ON tbl_jenjang.id_jenjang = tbl_pendidikan.id_jenjang
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -943,7 +943,7 @@ LEFT JOIN tbl_jenjang ON tbl_jenjang.id_jenjang = tbl_pendidikan.id_jenjang
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -972,7 +972,7 @@ LEFT JOIN tbl_jenjang ON tbl_jenjang.id_jenjang = tbl_pendidikan.id_jenjang
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -994,7 +994,7 @@ LEFT JOIN tbl_jenjang ON tbl_jenjang.id_jenjang = tbl_pendidikan.id_jenjang
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -1076,7 +1076,7 @@ tbl_jabatanprofil on tbl_jabatanprofil.id_jabatanprofil=tbl_pekerjaanprofil.id_j
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -1103,7 +1103,7 @@ tbl_jabatanprofil on tbl_jabatanprofil.id_jabatanprofil=tbl_pekerjaanprofil.id_j
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -1127,7 +1127,7 @@ tbl_jabatanprofil on tbl_jabatanprofil.id_jabatanprofil=tbl_pekerjaanprofil.id_j
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -1188,7 +1188,7 @@ tbl_jabatanprofil on tbl_jabatanprofil.id_jabatanprofil=tbl_pekerjaanprofil.id_j
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -1213,7 +1213,7 @@ tbl_jabatanprofil on tbl_jabatanprofil.id_jabatanprofil=tbl_pekerjaanprofil.id_j
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
@@ -1293,7 +1293,7 @@ tbl_kelamin ON tbl_kelamin.id_kelamin=tbl_anak.id_jk where tbl_anak.id_profil='$
         $data['akses']=$this->session->userdata('akses');
         if(empty($cek))
         {
-            header('location:'.base_url().'webadmin/loginpage');
+            header('location:'.base_url().'webadmin/loginpage'); exit;
         }
         else
         {
