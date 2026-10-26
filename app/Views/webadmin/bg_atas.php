@@ -21,14 +21,19 @@
         <link href="<?php echo base_url(); ?>admintema/assets/css/style.css" rel="stylesheet" type="text/css" />
 		 <link href="<?php echo base_url(); ?>admintema/assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
-             <link href="<?php echo base_url(); ?>datepicker/css/datepicker.css" rel="stylesheet" media="screen">
-             <style>
- .ck-editor__editable
- {
-    min-height: 400px !important;
-    max-height: 400px !important;
- }
-</style>
+        <!-- Summernote CSS -->
+        <link href="<?php echo base_url(); ?>admintema/assets/plugins/summernote/summernote-bs4.css" rel="stylesheet" type="text/css" />
+        <style>
+            .note-editor.note-frame {
+                border: 1px solid #ced4da;
+                border-radius: 4px;
+            }
+            .note-editor.note-frame .note-editing-area .note-editable {
+                min-height: 350px;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
     </head>
 
 

@@ -57,25 +57,100 @@ $(document).ready(function() {
 
 
 </script>
-<script src="<?php echo base_url(); ?>barulagi5/build/ckeditor.js"></script>
+<!-- Summernote JS -->
+<script src="<?php echo base_url(); ?>admintema/assets/plugins/summernote/summernote-bs4.min.js"></script>
 <script>
-  ClassicEditor
-    .create( document.querySelector( '#editor' ), {
-      ckfinder: {
-            // Upload the images to the server using the CKFinder QuickUpload command.
-            uploadUrl: '<?php echo base_url(); ?>assets/gambar/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json'
+$(document).ready(function() {
+    var $editors = $('#editor, #editor1, textarea.ckeditor');
+    if ($editors.length > 0 && typeof $.fn.summernote !== 'undefined') {
+        $editors.each(function() {
+            var $this = $(this);
+            $this.summernote({
+                height: 350,
+                minHeight: 250,
+                placeholder: 'Tulis isi konten di sini...',
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'clear']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview']]
+                ],
+                callbacks: {
+                    onImageUpload: function(files) {
+                        for (var i = 0; i < files.length; i++) {
+                            uploadSummernoteImage(files[i], $this);
+                        }
+                    }
+                }
+            });
+        });
+
+        function detectCurrentModul() {
+            var path = window.location.pathname || '';
+            var segments = path.replace(/\/+$/, '').split('/');
+            var lastSegment = segments.pop() || '';
+            if (/^\d+$/.test(lastSegment) && segments.length > 0) {
+                lastSegment = segments.pop() || '';
             }
-    } )
-    .then( editor => {
-      window.editor = editor;
-    } )
-    .catch( err => {
-      console.error( err.stack );
-    } );
+            lastSegment = lastSegment.toLowerCase();
+
+            if (lastSegment.indexOf('artikel') !== -1 || lastSegment.indexOf('berita') !== -1) return 'berita';
+            if (lastSegment.indexOf('pegawai') !== -1 || lastSegment.indexOf('kepegawaian') !== -1) return 'pegawai';
+            if (lastSegment.indexOf('penghargaan') !== -1) return 'penghargaan';
+            if (lastSegment.indexOf('banner') !== -1) return 'banner';
+            if (lastSegment.indexOf('profil') !== -1) return 'profil';
+            if (lastSegment.indexOf('agenda') !== -1) return 'agenda';
+            if (lastSegment.indexOf('pengumuman') !== -1) return 'pengumuman';
+            if (lastSegment.indexOf('statis') !== -1) return 'statis';
+            if (lastSegment.indexOf('galeri') !== -1 || lastSegment.indexOf('album') !== -1 || lastSegment.indexOf('foto') !== -1) return 'galeri';
+            if (lastSegment.indexOf('download') !== -1) return 'download';
+            if (lastSegment.indexOf('faq') !== -1) return 'faq';
+            return lastSegment || 'berita';
+        }
+
+        function uploadSummernoteImage(file, $target) {
+            var data = new FormData();
+            data.append("file", file);
+            data.append("modul", detectCurrentModul());
+            $.ajax({
+                url: "<?php echo base_url(); ?>webadmin/upload_image_summernote",
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "POST",
+                success: function(url) {
+                    $target.summernote('insertImage', url);
+                },
+                error: function() {
+                    // Fallback: jika upload server gagal, tetap masukkan gambar sebagai Base64
+                    var reader = new FileReader();
+                    reader.onloadend = function() {
+                        $target.summernote('insertImage', reader.result);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        // Sinkronisasi data ke textarea saat form disubmit
+        $('form').on('submit', function() {
+            $editors.each(function() {
+                var $t = $(this);
+                if ($t.summernote('isEmpty')) {
+                    $t.val('');
+                } else {
+                    $t.val($t.summernote('code'));
+                }
+            });
+        });
+    }
+});
 </script>
 		
     <!-- Client-side Image Compressor & WebP Converter -->
-    <script src="<?php echo base_url(); ?>assets/js/image-compressor.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/image-compressor.js?v=<?php echo time(); ?>"></script>
 
     </body>
 </html>

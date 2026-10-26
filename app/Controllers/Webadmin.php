@@ -163,6 +163,96 @@ class Webadmin extends CI_Controller
 		$this->session->sess_destroy();
 		header('location:' . base_url() . ''); exit;
 	}
+
+	private function _detectModulName($modulParam = '')
+	{
+		$modul = trim((string)$modulParam);
+
+		// Jika modul belum ditentukan di parameter, deteksi dari URL Referer
+		if (empty($modul)) {
+			$referer = (string)$this->request->getServer('HTTP_REFERER');
+			$path = parse_url($referer, PHP_URL_PATH) ?? '';
+			$segments = explode('/', trim($path, '/'));
+			$action = end($segments) ?: '';
+			if (is_numeric($action) && count($segments) > 1) {
+				$action = $segments[count($segments) - 2];
+			}
+			$modul = $action;
+		}
+
+		$modul = strtolower($modul);
+
+		if (str_contains($modul, 'artikel') || str_contains($modul, 'berita')) {
+			return 'berita';
+		}
+		if (str_contains($modul, 'pegawai') || str_contains($modul, 'kepegawaian')) {
+			return 'pegawai';
+		}
+		if (str_contains($modul, 'penghargaan')) {
+			return 'penghargaan';
+		}
+		if (str_contains($modul, 'banner')) {
+			return 'banner';
+		}
+		if (str_contains($modul, 'profil')) {
+			return 'profil';
+		}
+		if (str_contains($modul, 'agenda')) {
+			return 'agenda';
+		}
+		if (str_contains($modul, 'pengumuman')) {
+			return 'pengumuman';
+		}
+		if (str_contains($modul, 'statis')) {
+			return 'statis';
+		}
+		if (str_contains($modul, 'galeri') || str_contains($modul, 'album') || str_contains($modul, 'foto')) {
+			return 'galeri';
+		}
+		if (str_contains($modul, 'download')) {
+			return 'download';
+		}
+		if (str_contains($modul, 'faq')) {
+			return 'faq';
+		}
+
+		$clean = preg_replace('/[^a-z0-9_-]/', '', $modul);
+		return !empty($clean) ? $clean : 'berita';
+	}
+
+	public function upload_image_summernote()
+	{
+		$cek = $this->session->userdata('logged_in');
+		if (empty($cek)) {
+			http_response_code(403);
+			echo "Akses ditolak";
+			exit;
+		}
+
+		$modul = $this->_detectModulName($this->request->getPost('modul'));
+
+		$uploadPath = FCPATH . 'asset/' . $modul . '/';
+		if (!is_dir($uploadPath)) {
+			mkdir($uploadPath, 0777, true);
+		}
+
+		$config['upload_path'] = './asset/' . $modul . '/';
+		$config['allowed_types'] = 'jpg|jpeg|png|gif|bmp|webp';
+		$config['encrypt_name'] = TRUE;
+		$config['max_size'] = 10240;
+
+		$this->load->library('upload', $config);
+
+		if ($this->upload->do_upload('file')) {
+			$data = $this->upload->data();
+			echo base_url('asset/' . $modul . '/' . $data['file_name']);
+		} else {
+			http_response_code(400);
+			echo $this->upload->display_errors('', '');
+		}
+		exit;
+	}
+
 	function index()
 	{
 

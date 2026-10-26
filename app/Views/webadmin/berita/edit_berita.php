@@ -112,7 +112,7 @@ tbl_tagdetail
 				?>	
 					<option value="<?php echo $d['id_tag']; ?>" selected="selected"><?php echo $d['tag']; ?></option>
 				
-			  <?
+			  <?php
 			 }
 			 else
 			 {
@@ -153,19 +153,19 @@ Gambar Thumbnail Dari URL/Link</label>
        <div class="form-group" style="display: none;">
                             <label class="control-label">Headline</label>
                      <select name="headline" class="form-control">
-<?
+<?php
 if($headline=="HEADLINE"){
 	?>
 <option value="HEADLINE" selected="selected">HEADLINE</option>
 <option value="">TIDAK</option>
-<?
+<?php
 }
 else
 {
 	?>
     <option value="HEADLINE">HEADLINE</option>
 <option value="" selected="selected">TIDAK</option>
-	<?
+	<?php
 }
 ?>
 </select>

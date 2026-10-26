@@ -110,6 +110,17 @@
      * Tampilkan notifikasi badge status kompresi di bawah input file
      */
     function showCompressionBadge(input, results) {
+        if (
+            !input ||
+            !input.parentElement ||
+            !input.name ||
+            input.name === 'files' ||
+            input.closest('.note-modal') ||
+            input.closest('.note-image-dialog') ||
+            input.closest('.ck-file-dialog-button')
+        ) {
+            return;
+        }
         let badgeContainer = input.parentElement.querySelector('.webp-compress-info');
         if (!badgeContainer) {
             badgeContainer = document.createElement('div');
@@ -148,6 +159,28 @@
     async function handleFileInputChange(event) {
         const input = event.target;
         if (!input || input.type !== 'file' || !input.files || input.files.length === 0) {
+            return;
+        }
+
+        // Hanya proses input file form yang memiliki atribut name (seperti name="userfile")
+        // Abaikan input file internal yang dibuat oleh CKEditor, Summernote, atau rich text editor lainnya
+        if (
+            !input.name ||
+            input.name.trim() === '' ||
+            input.name === 'files' ||
+            input.closest('.note-editor') ||
+            input.closest('.note-modal') ||
+            input.closest('.note-image-dialog') ||
+            input.classList.contains('note-image-input') ||
+            input.closest('.ck') ||
+            input.closest('.ck-editor') ||
+            input.closest('.cke') ||
+            input.closest('.ck-file-dialog-button') ||
+            input.classList.contains('ck-hidden') ||
+            input.classList.contains('cke_dialog_ui_input_file') ||
+            input.hasAttribute('data-no-compress') ||
+            input.classList.contains('no-compress')
+        ) {
             return;
         }
 

@@ -64,7 +64,7 @@ Examples:
 
 ATTENTION: The trailing slash is required.
 */
-$baseUrl = '/gambar/userfiles/';
+$baseUrl = '/assets/gambar/userfiles/';
 
 /*
 $baseDir : the path to the local directory (in the server) which points to the
@@ -201,7 +201,7 @@ $config['ResourceType'][] = Array(
 		'url' => $baseUrl . 'files',
 		'directory' => $baseDir . 'files',
 		'maxSize' => 0,
-		'allowedExtensions' => '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pptx,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip',
+		'allowedExtensions' => '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pptx,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip,webp',
 		'deniedExtensions' => '');
 
 $config['ResourceType'][] = Array(
@@ -209,7 +209,7 @@ $config['ResourceType'][] = Array(
 		'url' => $baseUrl . 'images',
 		'directory' => $baseDir . 'images',
 		'maxSize' => 0,
-		'allowedExtensions' => 'bmp,gif,jpeg,jpg,png',
+		'allowedExtensions' => 'bmp,gif,jpeg,jpg,png,webp',
 		'deniedExtensions' => '');
 
 $config['ResourceType'][] = Array(
@@ -337,7 +337,7 @@ sent in the cookie
 
 https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29_Prevention_Cheat_Sheet#Double_Submit_Cookies
 */
-$config['EnableCsrfProtection'] = true;
+$config['EnableCsrfProtection'] = false;
 
 
 include_once "plugins/imageresize/plugin.php";

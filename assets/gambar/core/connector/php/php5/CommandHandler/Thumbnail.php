@@ -227,6 +227,15 @@ class CKFinder_Connector_CommandHandler_Thumbnail extends CKFinder_Connector_Com
                     }
                 }
                 break;
+            case 'image/webp':
+                {
+                    if (function_exists('imagecreatefromwebp')) {
+                        $oImage = @imagecreatefromwebp($sourceFile);
+                    } else {
+                        $ermsg = 'WEBP images are not supported';
+                    }
+                }
+                break;
             default:
                 $ermsg = $sourceImageAttr['mime'].' images are not supported';
                 break;
@@ -239,7 +248,7 @@ class CKFinder_Connector_CommandHandler_Thumbnail extends CKFinder_Connector_Com
 
         $oThumbImage = imagecreatetruecolor($oSize["Width"], $oSize["Height"]);
 
-        if ($sourceImageAttr['mime'] == 'image/png')
+        if ($sourceImageAttr['mime'] == 'image/png' || $sourceImageAttr['mime'] == 'image/webp')
         {
             $bg = imagecolorallocatealpha($oThumbImage, 255, 255, 255, 127); // (PHP 4 >= 4.3.2, PHP 5)
             imagefill($oThumbImage, 0, 0 , $bg);
@@ -264,6 +273,11 @@ class CKFinder_Connector_CommandHandler_Thumbnail extends CKFinder_Connector_Com
                 break;
             case 'image/wbmp':
                 imagewbmp($oThumbImage, $targetFile);
+                break;
+            case 'image/webp':
+                if (function_exists('imagewebp')) {
+                    imagewebp($oThumbImage, $targetFile, $quality);
+                }
                 break;
         }
 

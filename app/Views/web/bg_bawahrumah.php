@@ -301,7 +301,7 @@ $ar= $this->News_model->Semua_JumlahTransparansi($idx);
 </script>
 	
 	<!-- Client-side Image Compressor & WebP Converter -->
-	<script src="<?php echo base_url(); ?>assets/js/image-compressor.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/image-compressor.js?v=<?php echo time(); ?>"></script>
 </body>
 
 </html>
